@@ -1,0 +1,42 @@
+{
+  "name": "@yuyuqueen/llm-context-kit",
+  "version": "0.1.0",
+  "description": "Context window management for LLM applications. Tool result truncation, conversation compression, and context budget estimation.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "llm",
+    "context-window",
+    "truncation",
+    "compression",
+    "token",
+    "anthropic",
+    "openai",
+    "ai"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
