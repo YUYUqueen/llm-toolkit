@@ -115,6 +115,31 @@ formatRuntimeInfo({ os: 'Darwin', model: 'claude-opus-4', node: undefined })
 // → ["Runtime: os=Darwin model=claude-opus-4"]
 ```
 
+## Common Sections
+
+Pre-built section builders for universal agent prompt patterns:
+
+```typescript
+import { createPromptAssembler, commonSections } from '@yuyuqueen/prompt-assembler'
+
+const prompt = createPromptAssembler({
+  sections: [
+    { name: 'identity', content: 'You are a coding assistant.' },
+    commonSections.safety(),
+    commonSections.toolCallStyle(),
+    commonSections.dateTime({ timezone: 'Asia/Shanghai' }),
+    commonSections.memoryRecall(),
+  ],
+})
+```
+
+| Builder | Description |
+|---------|-------------|
+| `safety()` | Safety guardrails — no self-preservation, comply with stop/pause requests |
+| `toolCallStyle()` | Tool call narration — silent by default, narrate only when helpful |
+| `dateTime({ timezone, locale? })` | Dynamic date/time with IANA timezone |
+| `memoryRecall({ searchToolName?, getToolName?, citations? })` | Memory recall guidance — search before answering about prior work |
+
 ## API
 
 ### `createPromptAssembler<T>(config)`
