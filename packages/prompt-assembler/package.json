@@ -1,6 +1,6 @@
 {
   "name": "@yuyuqueen/prompt-assembler",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Modular system prompt assembly for LLM applications. Section-based builder with conditional rendering, tool formatting, and context file injection.",
   "type": "module",
   "main": "./dist/index.js",
